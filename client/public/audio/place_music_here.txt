@@ -1,0 +1,6 @@
+Place your background music file here.
+Name the file: bg-music.mp3
+Format: MP3
+
+The website is configured to look for this file at /audio/bg-music.mp3 (mapped from client/public/audio/bg-music.mp3).
+If this file is present, a floating play/pause music button will appear at the bottom right corner of the invitation page. If this file is missing, the player button will automatically hide to avoid console errors.
