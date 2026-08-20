@@ -10,7 +10,7 @@ export const CONFIG = {
   countdownDate: "2026-08-16T09:00:00", // ISO-8601 string for countdown target
   venueName: "Siddharth Villa, Plot No. 42, Green Meadows Enclave, Sector 62",
   venueCity: "Noida, Uttar Pradesh, India",
-  googleMapsLink: "https://maps.app.goo.gl/yYvSg7yPXZRnmVvS8", // Update with your actual directions URL
+  googleMapsLink: "https://maps.google.com/?q=Green+Meadows+Enclave+Sector+62+Noida", // Update with your actual directions URL
   apiBaseUrl: "https://housewarming-invitation.onrender.com/api", // Base URL of Express backend
   timeline: [
     {
