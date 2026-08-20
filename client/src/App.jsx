@@ -14,14 +14,25 @@ function App() {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const wishesWallRef = useRef(null);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentHash, setCurrentHash] = useState(window.location.hash);
 
-  // Synchronize route paths
+  // Synchronize route paths and hash changes
   useEffect(() => {
     const handlePopState = () => {
       setCurrentPath(window.location.pathname);
+      setCurrentHash(window.location.hash);
     };
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+    
     window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   // Check if cover was already opened in this session
@@ -44,8 +55,10 @@ function App() {
     }
   };
 
-  // Simple router check for Admin panel
-  if (currentPath === '/admin') {
+  // Simple router check for Admin panel (path /admin or hashes #/admin or #admin)
+  const isAdmin = currentPath === '/admin' || currentHash === '#/admin' || currentHash === '#admin';
+  
+  if (isAdmin) {
     return (
       <div className="app-container">
         <AdminDashboard />
