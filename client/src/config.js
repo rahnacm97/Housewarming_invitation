@@ -11,7 +11,7 @@ export const CONFIG = {
   venueName: "Siddharth Villa, Plot No. 42, Green Meadows Enclave, Sector 62",
   venueCity: "Noida, Uttar Pradesh, India",
   googleMapsLink: "https://maps.app.goo.gl/yYvSg7yPXZRnmVvS8", // Update with your actual directions URL
-  apiBaseUrl: "http://localhost:5001/api", // Base URL of Express backend
+  apiBaseUrl: "https://housewarming-invitation-api.onrender.com/api", // Base URL of Express backend
   timeline: [
     {
       time: "09:00 AM",
